@@ -1,0 +1,30 @@
+/**
+ * Created by Leridy on 2016/11/19.
+ */
+var path = require('path')
+var webpack = require('webpack')
+
+module.exports = {
+    devtool: 'inline-source-map',
+    entry: [
+        'webpack-hot-middleware/client',
+        './client/client.js'
+    ],
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: 'main.js',
+        publicPath: '/'
+    },
+    plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            loaders: ['babel-loader'],
+            exclude: /node_modules/
+        }]
+    }
+}
