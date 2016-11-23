@@ -10,6 +10,7 @@ import TodoInput from '../components/TodoInput';
 import TodoList from '../components/TodoList';
 
 class App extends React.Component{
+    
     render() {
         return (
             <div>
@@ -18,7 +19,7 @@ class App extends React.Component{
             </div>
         )
     }
-};
+}
 
 let mapStateToProps = function (state) {
     return state;

@@ -20,7 +20,7 @@ export default class TodoList extends React.Component{
                     this.props.todos.map(function (todo) {
                         return (
                           <TodoItem
-                              key = {todo.id}
+                              key = {todo.time}
                               todo = {todo}
                               deleteTodo = {this.props.actions.deleteTodo}
                               completeTodo = {this.props.actions.completeTodo}

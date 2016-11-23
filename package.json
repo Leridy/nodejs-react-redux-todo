@@ -22,6 +22,8 @@
     "babel-runtime": "^5.8.20",
     "ejs": "^2.5.2",
     "express": "^4.13.3",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.8",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",

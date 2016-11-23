@@ -9,11 +9,12 @@ import {createStore} from 'redux';
 import App from '../containers/App';
 import reducer from  '../redux/reducer'
 
+
 let initialState = {
     todos: [{
-        id: 0,
-        completed: false,
-        text: '学习如何使用react & redux'
+        time: 0,
+        completed: true,
+        todo: '小伙子跟我学做菜吧！'
     }]
 };
 
