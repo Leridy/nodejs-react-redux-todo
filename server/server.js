@@ -29,9 +29,10 @@ let tododb = mongoose.Schema({
 let tododbM = mongoose.model('tododbM', tododb);
 
 
+
 let getAll = function (res) {
     return tododbM.find().then(function (data) {
-        res.json({data: data});
+        res.json({todos: data});
     }).catch(function (err, res) {
         res.json({success: 0, err: err});
         

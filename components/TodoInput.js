@@ -23,7 +23,9 @@ export default class TodoInput extends React.Component {
         this._inputBox.value = "";
     };
     
-    
+    compomentDidAmount(){
+        this.handleSubmit(0);
+    }
     /*
      * 渲染输入框
      * */

@@ -32,7 +32,7 @@ let reducer = function (state, action) {
             return Object.assign({}, state, {
                 todos: state.todos.map(todo => {
                     return todo.time === action.time ?
-                        Object.assign({}, todo, {completed: !todo.completed}) : todo
+                        Object.assign({}, todo, {done: !todo.done}) : todo
                 })
             });
             

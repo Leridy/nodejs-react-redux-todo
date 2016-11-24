@@ -9,6 +9,10 @@ export default class TodoItem extends React.Component {
         
     };
     
+    
+    
+    
+    
     /*
      * 处理已完成事件
      * */
@@ -50,7 +54,7 @@ export default class TodoItem extends React.Component {
                 <input
                     type="checkbox"
                     className="todo-checkbox"
-                    defaultChecked={this.props.todo.completed}
+                    defaultChecked={this.props.todo.done}
                     onClick={this.handleCompleted.bind(this)}
                 />
                 {this.props.todo.todo}

@@ -10,6 +10,13 @@ import TodoInput from '../components/TodoInput';
 import TodoList from '../components/TodoList';
 
 class App extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    
+    CompomentDidAmount(){
+        this.props.getData();
+    }
     
     render() {
         return (

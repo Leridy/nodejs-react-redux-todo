@@ -8,17 +8,23 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import App from '../containers/App';
 import reducer from  '../redux/reducer'
+import $ from 'jquery'
 
 
-let initialState = {
-    todos: [{
-        time: 0,
-        completed: true,
-        todo: '小伙子跟我学做菜吧！'
-    }]
-};
+function getData() {
+    let initialState = [];
+    $.get('/todo/getAll', function (data) {
+        data.todos.reverse().forEach(function (ele) {
+            initialState.push(ele);
+        });
+    });
+    return {todos: initialState};
+}
 
-let store = createStore(reducer,initialState);
+
+
+let store = createStore(reducer, getData());
+
 
 render(
     <Provider store={store}>
