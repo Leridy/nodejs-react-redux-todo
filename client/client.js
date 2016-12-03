@@ -8,22 +8,12 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import App from '../containers/App';
 import reducer from  '../redux/reducer'
-import $ from 'jquery'
 
 
-function getData() {
-    let initialState = [];
-    $.get('/todo/getAll', function (data) {
-        data.todos.reverse().forEach(function (ele) {
-            initialState.push(ele);
-        });
-    });
-    return {todos: initialState};
-}
+let state = {todos:[]};
 
 
-
-let store = createStore(reducer, getData());
+let store = createStore(reducer, state);
 
 
 render(

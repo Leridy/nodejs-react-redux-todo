@@ -13,8 +13,13 @@ export default class TodoInput extends React.Component {
      * */
     handleSubmit(e) {
         e.preventDefault();
-        let inputValue = this._inputBox.value;
+        let inputValue = this._inputBox.value.trim();
         let id = Date.now();
+        if (inputValue === ""){
+            console.log("你没有输入任何信息");
+            alert("多少输入一点什么吧");
+            return 0;
+        }
         fetch(`/todo/add/?time=${id}&todo=${inputValue}`)
             .then(function (data) {
                 
@@ -23,9 +28,6 @@ export default class TodoInput extends React.Component {
         this._inputBox.value = "";
     };
     
-    compomentDidAmount(){
-        this.handleSubmit(0);
-    }
     /*
      * 渲染输入框
      * */
@@ -34,7 +36,7 @@ export default class TodoInput extends React.Component {
             <form onSubmit={this.handleSubmit.bind(this)}>
                 <input
                     type="text"
-                    maxLength="15"
+                    maxLength="40"
                     className="todo-input"
                     placeholder="TO DO 输入并回车 :-)"
                     ref={(a) => this._inputBox = a}

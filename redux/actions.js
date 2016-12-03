@@ -4,6 +4,7 @@
 const ADD_TODO = 'ADD_TODO';
 const DELETE_TODO = 'DELETE_TODO';
 const COMPLETE_TODO = 'COMPLETE_TODO';
+const INIT_TODO = 'INIT_TODO';
 
 /*
  * 定义Action Creator
@@ -28,6 +29,13 @@ let actions = {
         return {
             type: COMPLETE_TODO,
             time: time
+        }
+    },
+    
+    initState: function (state) {
+        return{
+            type: INIT_TODO,
+            todos:state,
         }
     }
 };

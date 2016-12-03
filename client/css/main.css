@@ -58,7 +58,7 @@ body {
 .todo-item {
     position: relative;
     width: 350px;
-    height: 50px;
+    min-height: 50px;
     padding-left:10px;
     line-height:50px;
     font-size:20px;

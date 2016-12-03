@@ -14,10 +14,6 @@ class App extends React.Component{
         super(props)
     }
     
-    CompomentDidAmount(){
-        this.props.getData();
-    }
-    
     render() {
         return (
             <div>

@@ -36,6 +36,12 @@ let reducer = function (state, action) {
                 })
             });
             
+        case 'INIT_TODO':
+            console.log(`初始化TO DO 完成`);
+            return Object.assign({},state,{
+                todos:action.todos
+            });
+        
         default:
             return state;
     }
